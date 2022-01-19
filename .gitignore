@@ -1,0 +1,13 @@
+.dart_tool/
+.idea/
+android/
+assets/
+build/
+ios/
+test/
+web/
+.metadata
+.packages
+analysis_options.yaml
+first.iml
+pubspect.lock
