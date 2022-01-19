@@ -10,4 +10,4 @@ web/
 .packages
 analysis_options.yaml
 first.iml
-pubspect.lock
+pubspec.lock
