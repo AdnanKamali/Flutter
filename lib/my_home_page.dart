@@ -10,29 +10,35 @@ class MyHomePage extends StatelessWidget {
   Widget svgTitle(
       {required String assetName,
       required String title,
+      required BuildContext context,
       BoxConstraints? constraints,
       TextStyle style = const TextStyle(fontSize: 20, color: Colors.white),
       Color color = Colors.white,
       double width = 45,
       double height = 55}) {
-    return Row(
-      children: [
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10),
-          child: SizedBox(
-            width: width,
-            height: height,
-            child: SvgPicture.asset(
-              assetName,
-              color: color,
+    return FittedBox(
+      alignment: Alignment.topCenter,
+      fit: BoxFit.fitHeight,
+      child: SizedBox(
+        width: MediaQuery.of(context).size.height / 2,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            SizedBox(
+              width: width,
+              height: height,
+              child: SvgPicture.asset(
+                assetName,
+                color: color,
+              ),
             ),
-          ),
+            Text(
+              title,
+              style: style,
+            )
+          ],
         ),
-        Text(
-          title,
-          style: style,
-        )
-      ],
+      ),
     );
   }
 
@@ -45,8 +51,9 @@ class MyHomePage extends StatelessWidget {
         final fontSize = contrains.maxHeight * 0.03;
         final maxHeight = deviceHeight > 750 || deviceWidth < 120
             ? contrains.maxHeight * 0.95
-            : contrains.maxHeight; // use MediaQ bigger than 750
+            : contrains.maxHeight;
         return Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             SizedBox(
               height: maxHeight * 0.05,
@@ -104,29 +111,33 @@ class MyHomePage extends StatelessWidget {
               height: maxHeight * 0.04,
             ),
             svgTitle(
+              context: context,
               style:
                   TextStyle(fontSize: maxHeight * 0.025, color: Colors.white),
               assetName: "assets/images/github.svg",
               title: "http://github.com/adnankamali",
             ),
             svgTitle(
+              context: context,
               style:
                   TextStyle(fontSize: maxHeight * 0.025, color: Colors.white),
               assetName: "assets/images/email.svg",
               title: "Adnankamali1246@gmail.com",
             ),
             svgTitle(
+              context: context,
               style:
                   TextStyle(fontSize: maxHeight * 0.025, color: Colors.white),
               assetName: "assets/images/phone.svg",
               title: "+98 917 952 1462",
             ),
             svgTitle(
+              context: context,
               style:
                   TextStyle(fontSize: maxHeight * 0.025, color: Colors.white),
               assetName: "assets/images/location.svg",
               title: "Hormozgan, BandarAbbas",
-            ),
+            )
           ],
         );
       }),

@@ -11,8 +11,16 @@ class AboutMeScreen extends StatefulWidget {
 
 class _AboutMeScreenState extends State<AboutMeScreen>
     with SingleTickerProviderStateMixin {
-  final String myInfoEn =
-      "Hi I am Adnan Kamali and I am 19 years old. I started programming with Python at the age of 17 and I realized that I am interested in mobile programming, so I continued with Flutter and I am still learning this great framework and I am progressing.";
+  @override
+  void initState() {
+    myInfoEn =
+        "Hi I am Adnan Kamali and I am 19 years old. I started programming with Python at the age of 17 and I realized that I am interested in mobile programming, so I continued with Flutter and I am still learning this great framework and I am progressing.";
+    super.initState();
+  }
+
+  bool isLoaded = false;
+  String myInfoEn = "";
+  String age = "19";
 
   final _controller = ScrollController();
 
