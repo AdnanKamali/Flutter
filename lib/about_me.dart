@@ -14,7 +14,7 @@ class _AboutMeScreenState extends State<AboutMeScreen>
   @override
   void initState() {
     myInfoEn =
-        "Hi I am Adnan Kamali and I am 19 years old. I started programming with Python at the age of 17 and I realized that I am interested in mobile programming, so I continued with Flutter and I am still learning this great framework and I am progressing.";
+        "Hi I am Adnan Kamali and I am 20 years old. I started programming with Python at the age of 17 and I realized that I am interested in mobile programming, so I continued with Flutter and I am still learning this great framework and I am progressing.";
     super.initState();
   }
 
